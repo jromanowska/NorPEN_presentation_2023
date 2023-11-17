@@ -1,0 +1,100 @@
+---
+title: "Drug-wide study associates 31 drug classes with the risk of Parkinson’s disease"
+author: "Julia Romanowska"
+institute: "University of Bergen"
+date: "2023-11-23"
+format:
+  revealjs:
+    date-format: "YYYY-MM-DD"
+    logo: img/UiBmerke_grayscaleV8_transp.png
+    theme: solarized
+    css: custom.css
+---
+
+```{r}
+#' include: false
+library(fontawesome)
+```
+
+## Methods {.center}
+
+. . .
+
+`r fa("prescription-bottle-medical")` Norwegian Prescription Database
+
+. . .
+
+`r fa("magnifying-glass")` hypothesis-free screening    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_(Cox regression)_
+
+. . .
+
+`r fa("pills")` ATC-code level 2    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_(C09 = agents acting on renin-angiotensin system)_
+
+. . .
+
+`r fa("star-of-life")` additional analyses:    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_sex-stratified_    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_time-lag_    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_dose-response_
+
+::: notes
+- NorPD: entire dataset, more than 600 million prescriptions from ca.4.5 million
+Norwegians, in the period 2004-2019
+- Cox regression with time-dependent exposure and age as time scale, adjusted for
+sex and education (as a proxy for socio-economic status); also: sex-stratified
+analysis
+- grouping the drugs
+
+We have conducted several sensitivity analyses, most importantly:
+
+- _time-lag analyses_, where the exposure period was shortened for everyone by
+3, 5, 8, or 10 years
+- _dose-response analyses_, where the exposure was modeled as a categorical
+variable with quartiles of the number of prescriptions taken
+
+:::
+
+---
+### 10 drug classes `r fa("arrow-down")` PD-risk, 21 drug classes `r fa("arrow-up")` PD-risk
+
+<img src="img/visual_abstract_transparent.png" style="height: 700px; position: absolute; right: 20px; top: 40px;"/>
+
+::: notes
+Here, I'm schematically showing majority of the significant results.
+
+The Hazard-ratios (HR) ranged from 0.68 to 1.94 for the pooled analysis.
+:::
+
+## Drug classes retaining the effect throughout time and doses
+
+<img src="img/visual_abstract_after_sensitivity_analyses.png" style="height: 700px; position: absolute; right: 20px; top: 40px;"/>
+
+::: notes
+- drug classes `r fa("arrow-up")` PD-risk:
+  - help identify patients early
+  - _e.g., urologicals, psychoanaleptics_
+  - Long way to go - all the RCTs have so far failed, but one problem might be
+that patients involved in these had too advanced stage of PD for the drug
+to be able to reverse the brain damage.
+
+
+- drug classes `r fa("arrow-down")` PD-risk
+  - might be repurposed as new treatment
+  - _e.g., drugs acting on renin-angitensin system, drugs for obstructive lung disease_
+
+:::
+
+## Check it out yourself! {.center .smaller}
+
+[https://jromanowska.github.io/Norwegian_drug_screening_ATC_level2/](https://jromanowska.github.io/Norwegian_drug_screening_ATC_level2/)
+
+<br/>
+
+Julia Romanowska, Kjetil Bjornevik, Marianna Cortese, Julia A Tuominen,
+Magne Solheim, Asieh Abolpour Mofrad, Jannicke Igland, Clemens R Scherzer, Trond Riise,    
+"Association Between Use of Any of the Drugs Prescribed in Norway and the Subsequent Risk of Parkinson Disease:
+A Drug-wide Association Study",    
+_Neurology_, **2023**,
+[DOI: 10.1212/WNL.0000000000207899](https://n.neurology.org/content/early/2023/10/10/WNL.0000000000207899)
